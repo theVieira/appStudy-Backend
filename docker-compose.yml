@@ -1,0 +1,15 @@
+version: '2.24.6'
+
+services:
+  controlstudies:
+    container_name: controlstudies
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=root
+      - POSTGRES_DB=controlstudies
+    image: postgres:alpine
+    volumes:
+      - './data:/var/lib/postgresql/data'
+    restart: always
